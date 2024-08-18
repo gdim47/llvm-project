@@ -4671,7 +4671,7 @@ def mdll : Joined<["-"], "mdll">, Group<m_Group>;
 def municode : Joined<["-"], "municode">, Group<m_Group>;
 def mthreads : Joined<["-"], "mthreads">, Group<m_Group>;
 def marm64x : Joined<["-"], "marm64x">, Group<m_Group>,
-  Visibility<[ClangOption, CLOption]>,
+  Visibility<[ClangOption, CLOption, CC1Option]>,
   HelpText<"Link as a hybrid ARM64X image">;
 def mguard_EQ : Joined<["-"], "mguard=">, Group<m_Group>,
   HelpText<"Enable or disable Control Flow Guard checks and guard tables emission">,

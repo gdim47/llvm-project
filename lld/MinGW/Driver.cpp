@@ -359,6 +359,7 @@ bool link(ArrayRef<const char *> argsArr, llvm::raw_ostream &stdoutOS,
   if (args.getLastArgValue(OPT_m) != "thumb2pe" &&
       args.getLastArgValue(OPT_m) != "arm64pe" &&
       args.getLastArgValue(OPT_m) != "arm64ecpe" &&
+      args.getLastArgValue(OPT_m) != "arm64xpe" &&
       args.hasFlag(OPT_disable_dynamicbase, OPT_dynamicbase, false))
     add("-dynamicbase:no");
   if (args.hasFlag(OPT_disable_high_entropy_va, OPT_high_entropy_va, false))
@@ -424,6 +425,8 @@ bool link(ArrayRef<const char *> argsArr, llvm::raw_ostream &stdoutOS,
       add("-machine:arm64");
     else if (s == "arm64ecpe")
       add("-machine:arm64ec");
+    else if (s == "arm64xpe")
+      add("-machine:arm64x");
     else
       error("unknown parameter: -m" + s);
   }
